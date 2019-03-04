@@ -1,63 +1,63 @@
 {{!< default}} <main class="content">
-    {{#post}}
-    <div class="row">
-        <div class="col s10">
-            <div id="artDetail" class="container">
-                <div class="card">
-                    <div class="card-content article-info">
-                        <div class="article-tag">
-                            {{#if tags}}
-                            {{#foreach tags}}
-                            <a href="{{url}}" target="_blank"><span class="chip tag-bg-color">{{name}}</span></a>
-                            {{/foreach}}
-                            {{/if}}
-                        </div>
-                        <div class="author-info">
-                            <span>
-                                <i class="fa fa-calendar fa-fw"></i>{{date format="YYYY-MM-DD"}}
-                            </span>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="card-content article-card-content">
-                        <div id="articleContent">
-                            {{content}}
-                        </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col s12">
-                                {{> reward}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card gitalk-card" data-aos="fade-up">
-                    <div id="gitalk-container" class="card-content"></div>
-                </div>
+  {{#post}}
+  <div class="row">
+    <div class="col s10">
+      <div id="artDetail" class="container">
+        <div class="card">
+          <div class="card-content article-info">
+            <div class="article-tag">
+              {{#if tags}}
+              {{#foreach tags}}
+              <a href="{{url}}" target="_blank"><span class="chip tag-bg-color">{{name}}</span></a>
+              {{/foreach}}
+              {{/if}}
             </div>
-        </div>
-        <div class="col s2">
-            <div id="toc" class="hiden-div">
-                <h2 style="margin-left:80px; background: #eaeaea; color:#000">目录</h2>
-                {{> toc}}
+            <div class="author-info">
+              <span>
+                <i class="fa fa-calendar fa-fw"></i>{{date format="YYYY-MM-DD"}}
+              </span>
             </div>
+          </div>
+          <hr>
+          <div class="card-content article-card-content">
+            <div id="articleContent">
+              {{content}}
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col s12">
+                {{> reward}}
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="card gitalk-card" data-aos="fade-up">
+          <div id="gitalk-container" class="card-content"></div>
+        </div>
+      </div>
     </div>
-    {{/post}}
-    </main>
+    <div class="col s2">
+      <div id="toc" class="hiden-div">
+        <h2 style="margin-left:80px; background: #eaeaea; color:#000">目录</h2>
+        {{> toc}}
+      </div>
+    </div>
+  </div>
+  {{/post}}
+</main>
 <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
- <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-    <script>
-        let url =  md5(window.location.href);
-        let gitalk = new Gitalk({
-            clientID: '4e1a590dce70274c8bfe',
-            clientSecret: '67c19037a8396ab449810fb26a58047ceaaa16d2',
-            repo: 'ghost-theme-mj',
-            owner: 'gitHber',
-            admin: ['gitHber'],
-            id: url,
-            distractionFreeMode: false  // Facebook-like distraction free mode
-        });
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+  let url = md5(window.location.href);
+  let gitalk = new Gitalk({
+    clientID: '4e1a590dce70274c8bfe',
+    clientSecret: '67c19037a8396ab449810fb26a58047ceaaa16d2',
+    repo: 'blog-ghost',
+    owner: 'gitHber',
+    admin: ['gitHber'],
+    id: url,
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  });
 
-        gitalk.render('gitalk-container');
-    </script>
+  gitalk.render('gitalk-container');
+</script>
