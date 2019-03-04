@@ -1,0 +1,243 @@
+/*!
+ * jquery.gsearch.css 0.9.0
+ * https://github.com/itobee/ghost-search
+ *
+ * Licensed under the MIT license.
+ * https://github.com/itobee/gsearch/blob/gh-pages/LICENSE
+ *
+ * Copyright 2016, Tobee
+ * http://tobee.me
+ */
+@font-face {
+  font-family: 'icon';
+  src: url('../fonts/icons.eot');
+  src: url('../fonts/icons.eot#iefix') format('embedded-opentype'), url('../fonts/icons.woff') format('woff'), url('../fonts/icons.ttf') format('truetype'), url('../fonts/icons.svg#icon') format('svg');
+}
+.search-ghost {
+  font-family: 'Helvetica Neue', 'Helvetica', tahoma, 'Hiragino Sans GB', 'PingFang SC', 'STHeitiSC-Light', 'Microsoft YaHei', Arial, sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #3A4145;
+  height: 60vh;
+  min-height: 360px;
+}
+@media (max-width: 500px) {
+  .search-ghost {
+    height: 80vh;
+  }
+}
+.search-ghost * {
+  margin: 0;
+  padding: 0;
+}
+.search-ghost a {
+  text-decoration: none;
+  color: #0089d7;
+}
+.search-ghost a:hover {
+  text-decoration: underline;
+}
+.search-ghost .icon {
+  line-height: 1;
+}
+.search-ghost .icon:before {
+  font-family: 'icon' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.search-ghost .icon-clear:before {
+  content: "\e601";
+}
+.search-ghost .icon-next:before {
+  content: "\e662";
+}
+.search-ghost .icon-prev:before {
+  content: "\e663";
+}
+.search-ghost .search-header {
+  position: relative;
+  height: 60px;
+}
+.search-ghost .search-header:before,
+.search-ghost .search-header:after {
+  position: absolute;
+  display: block;
+}
+.search-ghost .search-header:before {
+  font-family: 'icon' !important;
+  content: "\e660";
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #9EABB3;
+}
+.search-ghost .search-header:after {
+  content: " ";
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #ADDDFF;
+  transition: all 1s;
+}
+.search-ghost .search-header.focus:after {
+  background: #0083E3;
+  width: 100%;
+}
+.search-ghost .search-header .search-clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  display: none;
+  color: #9EABB3;
+  cursor: pointer;
+}
+.search-ghost .search-header .search-clear :hover {
+  color: #3A4145;
+}
+.search-ghost .search-header .search-field {
+  border: none;
+  width: 100%;
+  height: 60px;
+  font-size: 14px;
+  margin: 0;
+  border-radius: 0;
+  padding: 0 50px 0;
+  box-sizing: border-box;
+  border-bottom: solid 1px #E7EEF2;
+  background: #F0F4F7;
+  outline: none;
+}
+.search-ghost .search-header .search-field::-webkit-input-placeholder {
+  color: #9EABB3;
+}
+.search-ghost .search-header .search-field:-moz-placeholder {
+  color: #9EABB3;
+}
+.search-ghost .search-header .search-field::-moz-placeholder {
+  color: #9EABB3;
+}
+.search-ghost .search-header .search-field:-ms-input-placeholder {
+  color: #9EABB3;
+}
+.search-ghost .search-content {
+  height: calc(100% - 60px);
+}
+.search-ghost .search-content .search-body {
+  padding: 20px;
+  height: calc(100% - 50px);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.search-ghost .search-content .search-body .search-result {
+  border-bottom: solid 1px #E7EEF2;
+  padding: 10px 0;
+}
+.search-ghost .search-content .search-body .search-result:first-child {
+  padding-top: 0;
+}
+.search-ghost .search-content .search-body .search-result:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.search-ghost .search-content .search-body .search-result .result-title {
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+.search-ghost .search-content .search-body .search-result .result-excerpt {
+  font-size: 12px;
+  margin: 10px 0 6px;
+  line-height: 1.6;
+  word-break: break-all;
+  text-justify: auto;
+  text-align: justify;
+}
+.search-ghost .search-content .search-body .search-result .result-meta {
+  font-size: 10px;
+  line-height: 1;
+  color: #9EABB3;
+}
+.search-ghost .search-content .search-body .search-result .result-meta span:not(:empty) {
+  margin-right: 2px;
+}
+.search-ghost .search-content .search-body .search-result .result-meta span:not(:empty):after {
+  margin-left: 5px;
+  content: "-";
+}
+.search-ghost .search-content .search-body .search-result em {
+  color: #EF2F11;
+  font-style: normal;
+}
+.search-ghost .search-content .search-body .search-infos {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #9EABB3;
+}
+.search-ghost .search-content .search-body .search-infos img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: solid 3px #E7EEF2;
+  opacity: .8;
+  transition: all .5s;
+}
+.search-ghost .search-content .search-body .search-infos img:hover {
+  border-color: #adddff;
+  opacity: 1;
+  transform: scale(1.1);
+}
+.search-ghost .search-content .search-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: solid 1px #E7EEF2;
+  background: #F0F4F7;
+  padding: 0 20px;
+  font-size: 12px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+.search-ghost .search-content .search-footer .search-query {
+  color: #9EABB3;
+  float: left;
+}
+.search-ghost .search-content .search-footer .search-query b {
+  color: #81929d;
+}
+@media (max-width: 500px) {
+  .search-ghost .search-content .search-footer .search-query {
+    display: none;
+  }
+}
+.search-ghost .search-content .search-footer .search-pagination {
+  float: right;
+  font-size: 12px;
+}
+.search-ghost .search-content .search-footer .search-pagination a {
+  margin: 0 3px;
+  cursor: pointer;
+}
+.search-ghost .search-content .search-footer .search-pagination a:hover {
+  text-decoration: none;
+}
+.search-ghost .search-content .search-footer .search-pagination a.active {
+  color: #9EABB3;
+  cursor: default;
+}

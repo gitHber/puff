@@ -1,0 +1,43 @@
+{{!< default}} <main class="content">
+  <div class="container" style="margin-top:-60px">
+    <article>
+      <div class="row tags-posts friend-all">
+
+      </div>
+
+    </article>
+  </div>
+</main>
+<script>
+  var friend = "";
+
+  var friend = "";
+  $.ajax({
+    type: "get",
+    url: "http://yapi.demo.qunar.com/mock/52815/ghost-blog/friend/ship",
+    async: true,
+    success: function (data) {
+      $.each(data.data, function (index, item) {
+        friend += '<div class="article tag-post col s12 m4 l4" data-aos="fade-up" data-aos-duration="2000">\
+                    <div class="card frind-card'+ ((index % 10) + 1) + '">\
+                        <div class="frind-ship">\
+                            <div class="title">\
+                                <img src="'+ item.headSculpture + '" alt="img">\
+                                <div>\
+                                    <h1 class="friend-name">'+ item.name + '</h1>\
+                                    <p>'+ item.introduction + '</p>\
+                                </div>\
+                            </div>\
+                            <div class="friend-button">\
+                                <a href="' + item.href + '" target="_blank" class="button button-glow button-rounded button-caution">' + item.hrefTitle + '</a>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </div>'
+      })
+      $(".friend-all").append(friend);
+    }
+  });
+
+
+</script>

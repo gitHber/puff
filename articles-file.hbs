@@ -1,0 +1,71 @@
+{{!< default}}
+<main class="content">
+  <div id="tags" class="container tag-tip-container">
+    <div class="card">
+      <div class="card-content">
+        <div class="tag-title center-align" data-aos="zoom-in">文章标签</div>
+        <div class="tag-chips" data-aos="zoom-in">
+          {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+          {{#foreach tags}}
+          {{#if count.posts}}
+          <a href="/articles/classification/{{slug}}">
+            <span class="chip center-align waves-effect waves-light
+                             chip-default classificationColor" style="background-color: #F9EBEA;">{{name}}
+              <span class="tag-length">({{count.posts}})</span>
+            </span>
+          </a>
+          {{/if}}
+          {{/foreach}}
+          {{/get}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <article>
+      <div class="row tags-posts">
+        <div class="article tag-post col s12 m12 l12">
+          <div class="card">
+            <div class="card-content">
+              <section id="cd-timeline" class="cd-container">
+                {{#get "posts" limit="all" include="authors" order="published_at desc" }}
+                {{#foreach posts}}
+                <div class="cd-timeline-block " data-aos="fade-up" data-aos-duration="1500">
+                  <div class=" cd-timeline-img cd-picture ">
+                    {{#if feature_image}}
+                    <img src="{{feature_image}}" class="responsive-img" alt="{{title}}">
+                    {{else}}
+                    <img src="http://image.luokangyuan.com/default.jpg" class="responsive-img" alt="{{title}}">
+                    {{/if}}
+                  </div>
+
+                  <div class="cd-timeline-content" data-aos="fade-up" data-aos-duration="1500">
+                    <h2>{{title}}</h2>
+                    <p>{{excerpt characters="60"}}</p>
+                    <a href="{{url}}" class="cd-read-more" target="_blank">阅读全文</a>
+                    <a href="{{url}}" class="gd-date" target="_blank">{{date format="YYYY年MM月DD日"}}</a>
+                    {{!-- <span class="cd-date">{{date}}</span> --}}
+                  </div>
+                </div>
+                {{/foreach}}
+                {{/get}}
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</main>
+
+
+
+{{!--
+    <script src="{{asset "libs/materialize/js/materialize.min.js"}}"></script>
+    <script src="{{asset "libs/masonry/masonry.pkgd.min.js"}}"></script>
+    <script src="{{asset "libs/aos/aos.js"}}"></script>
+    <script src="{{asset "libs/scrollprogress/scrollProgress.min.js"}}"></script>
+    <script src="{{asset "libs/lightGallery/js/lightgallery-all.min.js"}}"></script>
+    <script src="{{asset "js/matery.js"}}"></script>
+    <script src="{{asset "libs/prism/prism.js"}}"></script> --}}

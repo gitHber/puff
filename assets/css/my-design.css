@@ -1,0 +1,33 @@
+.pagination{
+  position: relative;
+  width: 100%;
+  margin: 0 auto 2em;
+  font-size: 1.3rem;
+  color: #9EABB3;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #fff;
+}
+.pagination a{
+  color: #9EABB3;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+}
+.older-posts {
+  right: 20px;
+}
+.newer-posts {
+  left: 20px;
+}
+.older-posts:hover, .newer-posts:hover {
+  color: #2b7fee;
+}
+.older-posts, .newer-posts {
+  position: absolute;
+  display: inline-block;
+  padding: 0 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: border 0.3s ease;
+  height: 100%;
+}
