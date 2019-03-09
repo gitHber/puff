@@ -1,0 +1,55 @@
+<!--by:Tobee -->
+<div class="remodal-overlay remodal-is-closed" style="display: none;"></div>
+<div class="remodal-overlay remodal-is-closed" style="display: none;">
+  <div class="remodal" data-remodal-id="search" id="search">
+    <div class="search-ghost">
+      <header class="search-header">
+        <input class="search-field" autocomplete="off" placeholder="请输入关键词..." data-content="keywords">
+        <i class="search-clear icon icon-clear" title="清空" data-content="clear"></i>
+      </header>
+      <div class="search-content" data-content="content">
+        <template>
+          {body}
+          <main class="search-body">
+            {result}
+            <article class="search-result">
+              <h2 class="result-title">
+                <a href="{link}">{title}</a>
+              </h2>
+              <p class="result-excerpt">{excerpt} ...</p>
+              <div class="result-meta">
+                <span>{author}</span> <span>{category}</span>
+                <time class="result-date">{date}</time>
+              </div>
+            </article>
+            {/result}
+            {infos}
+            <div class="search-infos">
+              <img src="{{asset "/libs/gsearch/images/no-face-man.png"}}" width="100">
+              <p>{info}</p>
+            </div>
+            {/infos}
+          </main>
+          {/body} {footer}
+          <footer class="search-footer">
+            {query}
+            <p class="search-query">通过 <b class="search-keyword">{keyword}</b> 共搜索到 <b
+                class="search-amount">{amount}</b> 篇文章</p>
+            {/query}
+            <div class="search-pagination">
+              {prev}
+              <a class="pagination-link prev" data-page="{page}"><i class="icon icon-prev"></i></a>
+              {/prev}
+              {pages}
+              <a class="pagination-link active" data-page="{page}">{page}</a> {/pages}
+              {next}
+              <a class="pagination-link next" data-page="{page}"><i class="icon icon-next"></i></a>
+              {/next}
+            </div>
+          </footer>
+          {/footer}
+        </template>
+      </div>
+    </div>
+  </div>
+</div>

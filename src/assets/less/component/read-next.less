@@ -1,0 +1,64 @@
+/*-----------------------------推荐阅读-------------------------------*/
+.read-next {
+  display: flex;
+  align-items: stretch;
+  margin: 30px auto;
+  padding-bottom: 60px;
+  max-width: 960px;
+  font-family: '-apple-system', 'Open Sans', 'Microsoft YaHei', sans-serif;
+}
+
+.read-next-story {
+  padding: 16px;
+  background-color: #fff;
+  border: 1px solid #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+  margin: 0 15px;
+  .read-next-media {
+    overflow: hidden;
+    background-color: #f4f6f8;
+    a {
+      background: #f4f6f8 no-repeat center center;
+      background-size: cover;
+      position: relative;
+      transition: all .5s ease-in-out;
+      display: block;
+      &:before {
+        .cover-mixin;
+        background: linear-gradient(to bottom, rgba(56, 56, 56, .25), rgba(56, 56, 56, .35) 100%);
+        opacity: .4;
+      }
+      &:after {
+        display: block;
+        content: '';
+        width: 100%;
+        padding-bottom: 300px;
+      }
+      &:hover:before {
+        opacity: .8;
+      }
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  }
+  .read-next-content {
+    h3 {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      a {
+        color: @font-black-color;
+        &:hover {
+          color: @link-color;
+        }
+      }
+    }
+    p {
+      color: @font-grey-color;
+      line-height: 1.7;
+    }
+  }
+}

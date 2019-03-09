@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="footer-content-title">最新文章</h4>
+        <div class="footer-content-post">
+          {{#get "posts" limit="3" as |recents|}}
+          {{#foreach recents}}
+          <div class="recent-single-post">
+            <a href="{{url}}" class="footer-post-cover" style="background-image: url({{#if feature_image}}{{feature_image}}
+								   {{else}}{{asset 'images/default_cover.jpg'}}{{/if}})"></a>
+            <div class="footer-post-info">
+              <h4 class="footer-post-title"><a href="{{url}}">{{title}}</a></h4>
+              <div class="footer-post-date">
+                <span>发表于</span>
+                <span>{{date published_at format="YYYY年MM月DD日"}}</span>
+              </div>
+            </div>
+          </div>
+          {{/foreach}}
+          {{/get}}
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-bottom: 10px;">
+        <div class="col-md-12 col-xs-6">
+          <h4 class="footer-content-title" style="text-align: center">公众号</h4>
+          <img src="{{asset "images/qrcode.jpg"}}" style="width: 100px" />
+        </div>
+        <div class="col-md-12 col-xs-6">
+          <h4 class="footer-content-title" style="text-align: center">小程序</h4>
+          <img src="{{asset "images/gh.jpg"}}" style="width: 100px" />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h4 class="footer-content-title">工具</h4>
+        <div class="footer-friend-links">
+          <a href="http://mock.likun.fun">YApi</a>
+        </div>
+        <h4 class="footer-content-title">友情链接</h4>
+        <div class="footer-friend-links">
+          {{> custom/friend-ship}}
+        </div>
+
+        <h4 class="footer-content-title">联系我</h4>
+        <ul class="footer-follow-social">
+          {{> custom/social-icon}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

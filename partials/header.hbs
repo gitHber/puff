@@ -1,0 +1,17 @@
+<header style="background-image: url({{@blog.cover_image}});z-index:2;" class="site-header animated fadeIn">
+  {{navigation}}
+  <div class="header-middle">
+    <div class="header-middle-content animated fadeInUp">
+      <a href="{{@blog.url}}" class="site-title">{{@blog.title}}</a>
+      <h4 class="site-description">{{@blog.description}}</h4>
+      <nav class="site-social-navigation">
+        <ul>
+          {{> custom/social-icon}}
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <a class="indicator">
+    <i class="fa fa-angle-down"></i>
+  </a>
+</header>

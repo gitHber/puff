@@ -1,0 +1,30 @@
+{{!< default}}
+<link rel="stylesheet" type="text/css" href="{{asset "css/jqcloud.css"}}">
+<style>
+  body {
+    background: #eaeaea;
+  }
+</style>
+<script src="{{asset "js/jqcloud-1.0.4.min.js"}}"></script>
+<script src="{{asset "js/tag-cloud.js"}}"></script>
+<header class="tag-cloud-header">
+  {{> navigation}}
+  <div id="tag-wordcloud"></div>
+</header>
+<div class="card" style="width: 90%;margin-left: 5%">
+  <div class="card-content">
+    {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+    {{#foreach tags}}
+    {{#if count.posts}}
+    <a class="tag-wrap" href="{{url}}"
+      style="background-image: url({{#if feature_image}}{{feature_image }}{{else}}{{@blog.cover_image}}{{/if}})">
+      <div class="tag-cont">
+        <h2>{{name}}({{count.posts}})</h2>
+        <button>Show</button>
+      </div>
+    </a>
+    {{/if}}
+    {{/foreach}}
+    {{/get}}
+  </div>
+</div>

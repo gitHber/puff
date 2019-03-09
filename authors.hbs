@@ -1,0 +1,40 @@
+{{!< default}}
+<link rel="stylesheet" type="text/css" href="{{asset "css/jqcloud.css"}}">
+<style>
+  body {
+    background: #eaeaea;
+  }
+</style>
+<script src="{{asset "js/jqcloud-1.0.4.min.js"}}"></script>
+<script src="{{asset "js/user-cloud.js"}}"></script>
+<header class="tag-cloud-header">
+  {{> navigation}}
+  <div id="user-wordcloud"></div>
+</header>
+<div class="card" style="width: 90%;margin-left: 5%">
+  <div class="card-content" style="display:flex;flex-wrap: wrap;justify-content: center;">
+    {{#get "users" limit="all" include="count.posts" order="count.posts desc" }}
+    {{#foreach users}}
+    {{#if count.posts}}
+    <section class="author-wrap" style="width: 400px;margin: 0 20px 10px 0">
+      <div class="author-base">
+        <div class="author-icon" style="background-image: url({{img_url profile_image}})">
+          <a href="{{url}}" style="background-image: url({{img_url profile_image}})"></a>
+        </div>
+        <div class="author-info-wrap">
+          <h4 class="author-name"><a href="{{url}}">{{name}}</a></h4>
+          <p class="author-address">
+            <span><i class="fa fa-map-marker"></i>{{location}}</span>
+            <a href="{{website}}">
+              <span><i class="fa fa-link"></i>{{website}}</span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <p class="author-motto">{{bio}}</p>
+    </section>
+    {{/if}}
+    {{/foreach}}
+    {{/get}}
+  </div>
+</div>

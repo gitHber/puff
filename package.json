@@ -1,0 +1,42 @@
+{
+  "name": "puff1",
+  "version": "3.1.1",
+  "engines": {
+    "ghost": ">=1.0.0"
+  },
+  "description": "A Ghost theme focused on content designed by jerry.mei",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KINGMJ/maple.git"
+  },
+  "keywords": [
+    "ghost",
+    "ghost-theme",
+    "blog",
+    "theme",
+    "puff"
+  ],
+  "author": {
+    "name": "Jerry Mei",
+    "email": "328047478@qq.com",
+    "url": "http://www.maplejoyous.cn"
+  },
+  "config": {
+    "posts_per_page": 8
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KINGMJ/maple/issues"
+  },
+  "homepage": "https://github.com/KINGMJ/maple#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-less": "^4.0.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-uglify": "^3.0.0"
+  }
+}

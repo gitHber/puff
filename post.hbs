@@ -1,0 +1,100 @@
+{{!< default}}
+{{#post}}
+<header style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{@blog.cover_image}}{{/if}})"
+  class="post-header">
+  {{navigation}}
+  <div class="post-header-container">
+    <div class="post-content">
+      <h1 class="post-title">{{title}}</h1>
+      <ul>
+        <li><i class="fa fa-clock-o"></i>{{date format="YYYY年MM月DD日"}}</li>
+        <li><i class="fa fa-user-o"></i>{{primary_author.name}}</li>
+        <li><i class="fa fa-eye"></i>{{reading_time}}</li>
+      </ul>
+      <p class="post-tags">{{tags separator=""}}</p>
+    </div>
+  </div>
+</header>
+<div class="site-content">
+  <div class="article-wrapper">
+    <div class="article-left">
+      <article class="md-preview">
+        {{content}}
+      </article>
+    </div>
+    <nav class="navbar-side hidden">
+      <div class="toc-wrapper">
+        <a class="slide-toc-btn">
+          <span>目录</span>
+          <span></span>
+        </a>
+        <div id="toc"></div>
+      </div>
+    </nav>
+  </div>
+  <div class="post-footer">
+    {{#primary_author}}
+    <div class="post-author">
+      <section class="author-wrap">
+        <div class="author-base">
+          <div class="author-icon">
+            <a href="{{url}}" style="background-image: url({{img_url profile_image}})"></a>
+          </div>
+          <div class="author-info-wrap">
+            <h4 class="author-name"><a href="{{url}}">{{name}}</a></h4>
+            <p class="author-address">
+              <span><i class="fa fa-map-marker"></i>{{location}}</span>
+              <a href="{{website}}">
+                <span><i class="fa fa-link"></i>{{website}}</span>
+              </a>
+            </p>
+          </div>
+        </div>
+        <p class="author-motto">{{bio}}</p>
+      </section>
+    </div>
+    {{/primary_author}}
+    <aside>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="read-next">
+            {{#next_post}}
+            {{> read-next}}
+            {{/next_post}}
+            {{#prev_post}}
+            {{> read-prev}}
+            {{/prev_post}}
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="card gitalk-card" data-aos="fade-up">
+      <div id="gitalk-container" class="card-content"></div>
+    </div>
+  </div>
+  <a id="back_to_top" href="#"></a>
+
+</div>
+{{/post}}
+
+<div id="show_image_layer" class="hidden"></div>
+<div id="img_wrapper" class="hidden">
+  <img src="" alt="">
+</div>
+
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+  let url = md5(window.location.href);
+  let gitalk = new Gitalk({
+    clientID: '4e1a590dce70274c8bfe',
+    clientSecret: '67c19037a8396ab449810fb26a58047ceaaa16d2',
+    repo: 'blog-ghost',
+    owner: 'gitHber',
+    admin: ['gitHber'],
+    id: url,
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+
+  gitalk.render('gitalk-container');
+</script>
