@@ -1,19 +1,19 @@
 {{!< default}}
 <header
-  style="background-image: url({{#if author.cover_image}}{{author.cover_image }}{{else}}{{@blog.cover_image}}{{/if}})"
+  style="background-image: url({{#if primary_author.cover_image}}{{primary_author.cover_image }}{{else}}{{@blog.cover_image}}{{/if}})"
   class="tag-header">
   {{> navigation}}
   <div class="tag-header-container">
     <div class="tag-content">
-      {{#if author.profile_image}}
-      <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />
+      {{#if primary_author.profile_image}}
+      <img class="author-profile-image" src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" />
       {{else}}
-      <img class="author-profile-image" src="{{asset 'images/default_head.png'}}" alt="{{author.name}}" />
+      <img class="author-profile-image" src="{{asset 'images/default_head.png'}}" alt="{{primary_author.name}}" />
       {{/if}}
-      <h1 class="tag-title">{{author.name}}</h1>
-      {{#if author.bio}}
+      <h1 class="tag-title">{{primary_author.name}}</h1>
+      {{#if primary_author.bio}}
       <h2 class="tag-description">
-        {{author.bio}}
+        {{primary_author.bio}}
       </h2>
       {{/if}}
     </div>
