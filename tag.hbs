@@ -2,7 +2,7 @@
 <header
   style="background-image: url({{#if tag.feature_image}}{{tag.feature_image }}{{else}}{{@blog.cover_image}}{{/if}})"
   class="tag-header">
-  {{navigation}}
+  {{> navigation}}
   <div class="tag-header-container">
     <div class="tag-content">
       <h1 class="tag-title">{{tag.name}}</h1>
