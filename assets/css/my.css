@@ -150,8 +150,8 @@
   min-width: 300px;
 }
 .author-wrap:hover{
-  transform: translate(-2px,-2px);
-  box-shadow: 3px 3px 5px grey;
+  transform: translate(0px,-6px);
+  box-shadow: 0 5px 5px grey;
 }
 .author-wrap .bg-wrap {
   display: block;
