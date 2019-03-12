@@ -24,6 +24,10 @@
               {{excerpt characters="60"}}...
             </p>
             <div class="post-date">
+              {{#author}}
+              <i class="fa fa-user"></i>
+              <a href="{{url}}" style="margin-right: 10px!important">{{name}}</a>
+              {{/author}}
               <i class="fa fa-clock-o"></i>
               <span>发表于</span>
               <span>{{date format="YYYY年MM月DD日"}}</span>

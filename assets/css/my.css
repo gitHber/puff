@@ -153,6 +153,14 @@
   transform: translate(-2px,-2px);
   box-shadow: 3px 3px 5px grey;
 }
+.author-wrap .bg-wrap {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+.author-wrap .bg-wrap img {
+  width: 100%;
+}
 
 .author-wrap .author-base{
   display: flex;
