@@ -16,7 +16,7 @@
     $ git clone https://github.com/gitHber/puff.git
     ```
 3. 重启 Ghost 并进入后台管理系统
-4. 进入`Design`页面，选择`maple`主题，点击`ACTIVE`
+4. 进入`Design`页面，选择`puff`主题，点击`ACTIVE`
 ## ⚙️配置url
 只需要`git clone`或直接下载该主题，在后台切换主题。
 需要在`/content/settings/routes.yaml`修改配置
