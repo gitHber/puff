@@ -1,3 +1,4 @@
+# [Puff](https://github.com/gitHber/puff/) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 ## Puff
 ![image](./preview/home.png)
 ![image](./preview/tags.png)
@@ -34,5 +35,7 @@ taxonomies:
   tag: /tag/{slug}/
   author: /author/{slug}/
 ```
+## License
+Puff is [MIT licensed](./LICENSE).
 
 
