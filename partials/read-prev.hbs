@@ -1,5 +1,5 @@
 <div class="prev-next-story">
-  <a class="prev-next-story-img" href="{{url}}" {{#if feature_image}} style="background-image: url({{feature_image}}){{else}}no-cover{{/if}}"></a>
+  <a class="prev-next-story-img" href="{{url}}" {{#if feature_image}} style="background-image: url({{feature_image}}){{else}}{{asset 'images/default_cover.jpg'}}{{/if}}"></a>
   <div class="prev-next-story-info">
     <a class="prev-next-btn" href="{{url}}">上一篇</a>
     <a class="prev-next-text" href="{{url}}">{{title}}</a>
