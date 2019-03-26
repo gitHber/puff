@@ -16,15 +16,11 @@
     {{#get "users" limit="all" include="count.posts" order="count.posts desc" }}
     {{#foreach users}}
     {{#if count.posts}}
-    <section class="author-wrap" style="width: 400px;margin: 0 20px 10px 0">
-      <a class="bg-wrap" href="{{url}}">
-        <img src="{{#if cover_image}}{{cover_image }}{{else}}{{@blog.cover_image}}{{/if}}" />
-      </a>
+    <section class="author-wrap" style="width: 400px;margin: 0 20px 10px 0;">
+      <div class="author-wrap-bg" style="background-image: url({{#if cover_image}}{{cover_image }}{{else}}{{@blog.cover_image}}{{/if}})"></div>
       <div>
         <div class="author-base">
-          <a  class="author-icon" href="{{url}}" style="background-image: url({{img_url profile_image}})">
-            
-          </a>
+          <a  class="author-icon" href="{{url}}" style="background-image: url({{img_url profile_image}})"></a>
           <div class="author-info-wrap">
             <h4 class="author-name"><a href="{{url}}">{{name}}</a></h4>
             <p class="author-address">

@@ -141,6 +141,8 @@
 
 /* Here is your custom css styles. */
 .author-wrap{
+  position: relative;
+  box-shadow: 0 0 4px #000;
   padding: 10px 20px;
   background-color: hsla(0,0%,71%,.1);
   border: 1px solid #e1e1e1;
@@ -148,10 +150,22 @@
   width: 65%;
   max-width: 970px;
   min-width: 300px;
+  z-index: 0;
 }
 .author-wrap:hover{
   transform: translate(0px,-6px);
   box-shadow: 0 5px 5px grey;
+}
+.author-wrap-bg{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter: blur(3px);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .author-wrap .bg-wrap {
   display: block;
@@ -186,9 +200,12 @@
 }
 .author-wrap .author-base .author-name a {
   margin-left: initial;
-  color: #000;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
 }
 .author-wrap .author-base .author-address {
+  color: #fff;
+  text-shadow: 0 0 2px #000;
   font-style: italic;
   font-size: 13px;
 }
@@ -196,10 +213,11 @@
   margin-left: 10px;
 }
 .author-wrap .author-motto {
-  margin-top: 10px;
-  padding-top: 8px;
+  font-size: 15px;
+  padding-top: 20px;
   border-top: 1px solid #e1e1e1;
-  color: #969696;
+  color: #fff!important;
+  text-shadow: 0 0 2px #000;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
